@@ -1,0 +1,45 @@
+/* 1. Different fonts and styles */
+body {
+font-family: Georgia, "Times New Roman", serif;
+color: #222222;
+margin: 0;
+background-image: url("images\ \(1\).jpg");   /* background for the page */
+}
+h1 {
+font-family: Verdana, Geneva, sans-serif;
+font-size: 34px;
+color: #ffffff;
+text-align: center;
+margin: 0;
+}
+h2 { font-family: Verdana, sans-serif; color: #7a3b0c; }
+.serif { font-family: Georgia, serif; font-size: 18px; }
+.sans  { font-family: Arial, sans-serif; font-size: 16px; color: #1a5276; }
+.mono  { font-family: "Courier New", monospace; font-size: 16px; color: #145a32; }
+#special {
+font-weight: bold;
+font-style: italic;
+color: #922b21;
+text-decoration: underline;
+}
+
+/* 2. Background images on single elements */
+.banner {
+padding: 40px 10px;
+background-image: url("images\ \(2\).jpg");
+background-size: cover;
+}
+.content {
+width: 80%;
+margin: 25px auto;
+padding: 20px 30px;
+background-color: rgba(255, 255, 255, 0.92);
+border: 2px solid #7a3b0c;
+}
+.photo-box {
+height: 120px;
+padding: 10px;
+background-image: url("images.jpg");
+background-size: cover;
+}
+.highlight { color: #ffffff; font-size: 20px; font-weight: bold; }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form - E-mail and Phone Validation</title>
+  <style>
+    body  { font-family: Arial, sans-serif; margin: 24px; }
+    h2    { text-align: center; color: #5a2a08; }
+    table { margin: 0 auto; border-spacing: 10px; }
+    td:first-child { text-align: right; vertical-align: top; font-weight: bold; }
+    .error { color: #c0392b; font-size: 13px; }
+    .ok    { color: #1e8449; font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form name="regForm" onsubmit="return validateForm()">
+    <table>
+      <tr><td>E-mail id:</td>
+          <td><input type="text" id="email"><br>
+              <span class="error" id="emailError"></span></td></tr>
+      <tr><td>Phone Number:</td>
+          <td><input type="text" id="phone"><br>
+              <span class="error" id="phoneError"></span></td></tr>
+      <tr><td></td>
+          <td><input type="submit" value="Register">
+              <input type="reset" value="Reset"></td></tr>
+    </table>
+    <p class="ok" id="message"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var valid = true;
+
+      // standard pattern: name@domain.com
+      var emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/;
+      // exactly 10 digits and nothing else
+      var phonePattern = /^[0-9]{10}$/;
+
+      document.getElementById("emailError").innerHTML = "";
+      document.getElementById("phoneError").innerHTML = "";
+      document.getElementById("message").innerHTML = "";
+
+      // 3. E-mail id
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML =
+          "Enter a valid e-mail id (name@domain.com).";
+        valid = false;
+      }
+
+      // 4. Phone number
+      if (!phonePattern.test(phone)) {
+        document.getElementById("phoneError").innerHTML =
+          "Phone number must contain exactly 10 digits.";
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById("message").innerHTML =
+          "E-mail id and phone number are valid.";
+      }
+      return false;   // stay on the page for this demo
+    }
+  </script>
+</body>
+</html>

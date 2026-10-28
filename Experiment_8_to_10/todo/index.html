@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>My To-Do List</h1>
+      <p id="counter">0 tasks left</p>
+    </header>
+
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." required>
+      <select id="priority">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+
+    <nav class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="done">Completed</button>
+    </nav>
+
+    <ul id="taskList"></ul>
+
+    <footer>
+      <button id="clearDone">Clear completed</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

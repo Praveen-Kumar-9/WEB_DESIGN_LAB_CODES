@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Page</title>
+<style>
+body  { font-family: Arial, sans-serif; margin: 16px; }
+h2    { text-align: center; color: #5a2a08; }
+table { margin: 0 auto; border-spacing: 8px; }
+td:first-child { text-align: right; vertical-align: top; font-weight: bold; }
+</style>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form action="#" method="post">
+<table>
+<tr><td>Name:</td>
+<td><input type="text" name="name"></td></tr>
+<tr><td>Password:</td>
+<td><input type="password" name="password"></td></tr>
+<tr><td>E-mail id:</td>
+<td><input type="text" name="email"></td></tr>
+<tr><td>Phone Number:</td>
+<td><input type="text" name="phone"></td></tr>
+<tr><td>Sex:</td>
+<td><input type="radio" name="sex" value="Male"> Male
+<input type="radio" name="sex" value="Female"> Female
+<input type="radio" name="sex" value="Other"> Other</td></tr>
+<tr><td>Date of Birth:</td>
+<td><select name="day" id="day"><option>Day</option></select>
+<select name="month" id="month"><option>Month</option></select>
+<select name="year" id="year"><option>Year</option></select></td></tr>
+<tr><td>Languages Known:</td>
+<td><input type="checkbox" name="lang" value="English"> English
+<input type="checkbox" name="lang" value="Telugu"> Telugu
+<input type="checkbox" name="lang" value="Hindi"> Hindi
+<input type="checkbox" name="lang" value="Tamil"> Tamil</td></tr>
+<tr><td>Address:</td>
+<td><textarea name="address" rows="4" cols="30"></textarea></td></tr>
+<tr><td></td>
+<td><input type="submit" value="Register">
+<input type="reset" value="Reset"></td></tr>
+</table>
+</form>
+
+<script>
+// Fill the three date-of-birth select boxes
+var day = document.getElementById("day");
+var month = document.getElementById("month");
+var year = document.getElementById("year");
+var names = ["Jan","Feb","Mar","Apr","May","Jun",
+"Jul","Aug","Sep","Oct","Nov","Dec"];
+for (var d = 1; d <= 31; d++) day.add(new Option(d, d));
+for (var m = 0; m < 12; m++) month.add(new Option(names[m], m + 1));
+for (var y = 2010; y >= 1980; y--) year.add(new Option(y, y));
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form - Name and Password Validation</title>
+  <style>
+    body  { font-family: Arial, sans-serif; margin: 24px; }
+    h2    { text-align: center; color: #5a2a08; }
+    table { margin: 0 auto; border-spacing: 10px; }
+    td:first-child { text-align: right; vertical-align: top; font-weight: bold; }
+    .error { color: #c0392b; font-size: 13px; }
+    .ok    { color: #1e8449; font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form name="regForm" onsubmit="return validateForm()">
+    <table>
+      <tr><td>Name:</td>
+          <td><input type="text" id="name"><br>
+              <span class="error" id="nameError"></span></td></tr>
+      <tr><td>Password:</td>
+          <td><input type="password" id="password"><br>
+              <span class="error" id="passError"></span></td></tr>
+      <tr><td></td>
+          <td><input type="submit" value="Register">
+              <input type="reset" value="Reset"></td></tr>
+    </table>
+    <p class="ok" id="message"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var pass = document.getElementById("password").value;
+      var valid = true;
+
+      document.getElementById("nameError").innerHTML = "";
+      document.getElementById("passError").innerHTML = "";
+      document.getElementById("message").innerHTML = "";
+
+      // 1. Name: only alphabets and at least 6 characters
+      if (!/^[A-Za-z]+$/.test(name)) {
+        document.getElementById("nameError").innerHTML =
+          "Name must contain alphabets only.";
+        valid = false;
+      } else if (name.length < 6) {
+        document.getElementById("nameError").innerHTML =
+          "Name must be at least 6 characters long.";
+        valid = false;
+      }
+
+      // 2. Password: at least 6 characters
+      if (pass.length < 6) {
+        document.getElementById("passError").innerHTML =
+          "Password must be at least 6 characters long.";
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById("message").innerHTML =
+          "Name and password are valid.";
+      }
+      return false;   // stay on the page for this demo
+    }
+  </script>
+</body>
+</html>

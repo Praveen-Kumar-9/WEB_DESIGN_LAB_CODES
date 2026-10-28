@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px 40px;
+  background-color: #fffaf2;
+}
+h1, h2 { color: #7a3b0c; }
+
+/* 1. Controlling repetition of a background image */
+.box {
+  height: 110px;
+  padding: 10px;
+  border: 2px solid #7a3b0c;
+  font-weight: bold;
+  color: #5a2a08;
+  background-image: url("tile.png");
+}
+.grid       { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.repeat     { background-repeat: repeat; }
+.repeat-x   { background-repeat: repeat-x; }
+.repeat-y   { background-repeat: repeat-y; }
+.no-repeat  { background-repeat: no-repeat; }
+
+/* 2. Styles for links (keep the order: link, visited, hover, active) */
+a:link    { color: #0b5394; text-decoration: none; }
+a:visited { color: #7d3c98; }
+a:hover   { color: #c0392b; background-color: #ffe9c9; text-decoration: underline; }
+a:active  { color: #e67e22; font-weight: bold; }
